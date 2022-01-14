@@ -141,17 +141,20 @@ keys.globalkeys = gears.table.join( -- =========================================
     awful.key({modkey}, "d", function() awful.spawn(apps.launcher) end,
               {description = "application launcher", group = "launcher"}),
     -- launch neovide
-                      awful.key({modkey}, "e", function()
+                      awful.key({modkey}, "n", function()
         awful.spawn("prime-run neovide")
     end, {description = "start neovide", group = "editor"}),
-    -- =========================================
+                      awful.key({modkey}, "e",
+                                function() awful.spawn("prime-run emacs") end, {
+        description = "start emacs on nvidia",
+        group = "editor"
+    }), -- =========================================
     -- FUNCTION KEYS
     -- =========================================
-
     -- Brightness
-                      awful.key({}, "XF86MonBrightnessUp", function()
-        awful.spawn("xbacklight -inc 10", false)
-    end, {description = "+10%", group = "hotkeys"}),
+    awful.key({}, "XF86MonBrightnessUp",
+              function() awful.spawn("xbacklight -inc 10", false) end,
+              {description = "+10%", group = "hotkeys"}),
                       awful.key({}, "XF86MonBrightnessDown", function()
         awful.spawn("xbacklight -dec 10", false)
     end, {description = "-10%", group = "hotkeys"}), -- ALSA volume control

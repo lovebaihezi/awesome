@@ -42,8 +42,8 @@ network_interfaces = {wlan = 'wlp0s20f3', lan = 'enp8s0f1'}
 local run_on_start_up = {
     "picom --experimental-backends --config " .. theme_config_dir ..
         "picom.conf", "redshift", "unclutter",
-    "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)",
-    "blueman-applet", "nm-applet"
+    "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)"
+    -- "blueman-applet", "nm-applet"
 }
 
 -- ===================================================================
